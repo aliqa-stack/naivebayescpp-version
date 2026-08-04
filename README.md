@@ -1,1 +1,3 @@
-model machine learning yang pemerintah gamau lu tau 💀👻😈
+MODEL MACHINE LEARNING yang pemerintah gamau lu tau 💀👻😈
+
+uji algoritma naives bayes 
