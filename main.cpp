@@ -1,3 +1,5 @@
+//NAIVES BAYES ALGORITHM
+
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -111,9 +113,7 @@ class DataSet : public NaiveBayes{
 
               
         }
-        for(auto& v : countOf_Hspeech){
-            std::cout<<"vocabulary: "<<v.first<<"\n";
-        }
+       
         
         //hitung apakah data1 lebih besar dari data2, maka klasifikasikan sebagai "pspeech"
         return Logp > Logh ? "politic speech" : "non politic speech";
@@ -122,6 +122,27 @@ class DataSet : public NaiveBayes{
     std::string OutputData(std::string& data1){
         std::cout<< "Data 1: " << data1 << std::endl;
         return data1;
+    }
+
+    void CountMinMax(std::map<std::string, int>& countMap){
+        std::string minWord, maxWord;
+        int minCount = INT_MAX;
+        int maxCount = 0;
+
+        for (auto& v : countMap){
+            if(v.second > maxCount){
+                maxCount = v.second;
+                maxWord = v.first;
+            } 
+            if(v.second < minCount){
+                minCount = v.second;
+                minWord = v.first;
+
+            }
+        }
+
+        std::cout << "Kata dengan jumlah kemunculan terbanyak: " << maxWord << " (" << maxCount << " kali)" << std::endl;
+        std::cout << "Kata dengan jumlah kemunculan paling sedikit: " << minWord << " (" << minCount << " kali)" << std::endl;
     }
 
 };
@@ -139,15 +160,17 @@ int main(){
    // data.tokinisasiData1(data.data1);
    data.train(data.data1, "politic speech");
    data.train(data.data2, "non politic speech");
-    //data.tokinisasiData2(data.data2);
+    //data.tokinisasiData2(data.dat
 
     std::vector<std::string> testData = {
         "warahmatullahi wabarakatuh, bapak ibu yang terhormat dan teman teman yang ada disini, saya sekarang akan menyampaikan pidato"
     };
 
-        for(auto& test : testData){
-            std::string result = data.probability(test);
-            std::cout << "Hasil Klasifikasi: " << result << std::endl;
+    
+    for(auto& test : testData){
+        std::string result = data.probability(test);
+        std::cout << "Hasil Klasifikasi: " << result << std::endl;
+        data.CountMinMax(data.countOf_Pspeech);
         }
 
     return 0;
