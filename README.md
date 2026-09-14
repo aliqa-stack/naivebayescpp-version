@@ -1,4 +1,4 @@
-💻💻MODEL MACHINE LEARNING yang pemerintah gamau lu tau 💀👻😈
+💻💻MODEL MACHINE LEARNING yang pemerintah gamau lu tau 💀
 
 uji coba algoritma naives bayes
 *menggunakan standart library c++
