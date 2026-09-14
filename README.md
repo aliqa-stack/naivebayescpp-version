@@ -1,3 +1,5 @@
-MODEL MACHINE LEARNING yang pemerintah gamau lu tau 💀👻😈
+💻💻MODEL MACHINE LEARNING yang pemerintah gamau lu tau 💀👻😈
 
-uji algoritma naives bayes 
+uji coba algoritma naives bayes
+*menggunakan standart library c++
+*data set model algoritma ini belum sepenuhnya selesai!! 
